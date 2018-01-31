@@ -1,5 +1,6 @@
 import { UserService } from './../../service/user/user.service';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormBuilder,Validators,FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
     username: '',
     password: ''
   }
-
+  form: FormGroup;
+  
   constructor(private _userService: UserService) { }
 
   ngOnInit() {

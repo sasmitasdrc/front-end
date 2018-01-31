@@ -35,7 +35,7 @@ export class LineChartComponent implements OnInit, OnChanges {
 						right : 15,
 						bottom : 60,
 						left : 50
-					}, width = el.clientWidth - margin.left - margin.right; 
+					}, width = 550
 					if(el.clientWidth > 565)
 					   var height = 350	- margin.top - margin.bottom;
 					else

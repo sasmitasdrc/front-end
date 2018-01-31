@@ -30,6 +30,11 @@ import { BasicFormComponent } from './page/fragments/allUIComponents/basic-form/
 import { InlineFormComponent } from './page/fragments/allUIComponents/inline-form/inline-form.component';
 import { SliderComponent } from './page/fragments/allUIComponents/slider/slider.component';
 import { SdrcTableComponent } from './page/fragments/allUIComponents/sdrc-table/sdrc-table.component';
+import { RemoveElementPipe } from './filters/remove-from-array/remove-element.pipe';
+import { FormControlService } from './service/form-control.service';
+import { DynamicFormComponent } from './page/fragments/allUIComponents/dynamic-form/dynamic-form.component';
+import { FormFieldsService } from './service/form-fields.service';
+import { DynamicFormFieldsComponent } from './page/fragments/allUIComponents/dynamic-form-fields/dynamic-form-fields.component';
 
 const appRoutes: Routes = [
   {
@@ -73,7 +78,10 @@ const appRoutes: Routes = [
     BasicFormComponent,
     InlineFormComponent,
     SliderComponent,
-    SdrcTableComponent
+    SdrcTableComponent,
+    RemoveElementPipe,
+    DynamicFormComponent,
+    DynamicFormFieldsComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -92,7 +100,7 @@ const appRoutes: Routes = [
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [UserService, AuthGuard, DataService, User, HttpClientModule],
+  providers: [UserService, AuthGuard, DataService, User, HttpClientModule, FormControlService, FormFieldsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

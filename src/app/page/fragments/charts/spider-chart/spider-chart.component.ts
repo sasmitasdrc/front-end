@@ -45,13 +45,13 @@ export class SpiderChartComponent implements OnInit, OnChanges {
   createChart(d) {
     let element = this.chartContainer.nativeElement;
     d3.select(element).select("svg").remove();
-    this.width = element.offsetWidth - this.margin.left - this.margin.right;
-    this.height = element.offsetWidth - this.margin.top - this.margin.bottom;
+  
+    
     var chartData = d;
     var cfg = {
       radius : 5,
-      w : this.width,
-      h : this.height,
+      w : 300,
+      h : 300,
       factor : 1,
       factorLegend : .85,
       levels : 10,

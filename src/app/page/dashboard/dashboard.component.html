@@ -5,12 +5,11 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <app-spider-chart *ngIf="spiderData" [data]="spiderData.dataCollection"></app-spider-chart>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-8">
+
+    <div class="col-md-6">
         <app-bar-chart *ngIf="barChartData" [data]="barChartData.dataCollection"></app-bar-chart>
     </div>
 </div>

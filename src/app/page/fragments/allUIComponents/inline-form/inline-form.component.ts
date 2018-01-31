@@ -7,7 +7,7 @@ declare var $:any;
   styleUrls: ['./inline-form.component.scss']
 })
 export class InlineFormComponent implements OnInit {
-
+  email: string = "laxman@sdrc.co.in";
   constructor() {
     
    }

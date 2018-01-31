@@ -71,7 +71,7 @@ export class BarChartComponent implements OnInit {
       right : 55,
       bottom : 40, // // bottom height
       left : 40
-    }, width = el.clientWidth, height = 400 // //
+    }, width = 550, height = 300 // //
         // height
         - margin.top - margin.bottom;
     /*if($(window).width()< 768){

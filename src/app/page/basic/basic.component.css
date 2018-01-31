@@ -1,0 +1,38 @@
+.container-fluid{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    box-shadow:  -1px 3px 25px gray;
+    border-radius: 5px;
+    padding-top: 20px;
+  }
+  header.col-md-12 {
+    height: 50px;
+    background:linear-gradient(to right ,#9AE5F1,#ACAC11) ;
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: x-large;
+    
+  }
+  .container-body {
+    padding: 45px;
+  }
+  label.name {
+    display: none;
+  }
+  .country {
+    margin-top: 20px;
+  }
+  input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search-md], input[type=search], textarea.md-textarea {
+    
+    border-bottom: 1px solid #CCCC;
+    box-sizing: border-box;
+    height: 33px;
+    font-size: 13px;
+   
+  }
+  
+  
+  
+    
