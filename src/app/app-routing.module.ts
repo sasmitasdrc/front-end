@@ -1,5 +1,5 @@
 import { AuthGuard } from './guard/auth.guard';
-import { NgModule }             from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent }      from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
@@ -11,6 +11,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppRoutingModule {}

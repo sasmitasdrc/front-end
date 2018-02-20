@@ -7,6 +7,8 @@ import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 import { AppComponent } from './app.component';
@@ -19,14 +21,10 @@ import { SpiderChartComponent } from './page/fragments/charts/spider-chart/spide
 import { GoogleMapComponent } from './page/fragments/charts/google-map/google-map.component';
 import { BarChartComponent } from './page/fragments/charts/bar-chart/bar-chart.component';
 import { LineChartComponent } from './page/fragments/charts/line-chart/line-chart.component';
-import { UserDetailComponent } from './page/fragments/user-detail/user-detail.component';
-import { UserListComponent } from './page/fragments/user-list/user-list.component';
 import { User } from './interface/form-model';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserService } from './service/user/user.service';
-import { DataService } from './service/data/data.service';
 import { BasicComponent } from './page/basic/basic.component';
-import { BasicFormComponent } from './page/fragments/allUIComponents/basic-form/basic-form.component';
 import { InlineFormComponent } from './page/fragments/allUIComponents/inline-form/inline-form.component';
 import { SliderComponent } from './page/fragments/allUIComponents/slider/slider.component';
 import { SdrcTableComponent } from './page/fragments/allUIComponents/sdrc-table/sdrc-table.component';
@@ -34,7 +32,6 @@ import { RemoveElementPipe } from './filters/remove-from-array/remove-element.pi
 import { FormControlService } from './service/form-control.service';
 import { DynamicFormComponent } from './page/fragments/allUIComponents/dynamic-form/dynamic-form.component';
 import { FormFieldsService } from './service/form-fields.service';
-import { DynamicFormFieldsComponent } from './page/fragments/allUIComponents/dynamic-form-fields/dynamic-form-fields.component';
 
 const appRoutes: Routes = [
   {
@@ -45,11 +42,6 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'form',
-    component: UserListComponent,
     pathMatch: 'full'
   },
   {
@@ -72,16 +64,12 @@ const appRoutes: Routes = [
     GoogleMapComponent,
     BarChartComponent,
     LineChartComponent,
-    UserDetailComponent,
-    UserListComponent,
     BasicComponent,
-    BasicFormComponent,
     InlineFormComponent,
     SliderComponent,
     SdrcTableComponent,
     RemoveElementPipe,
     DynamicFormComponent,
-    DynamicFormFieldsComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -92,6 +80,7 @@ const appRoutes: Routes = [
       { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AppRoutingModule,
     HttpClientModule,
     AgmSnazzyInfoWindowModule,
@@ -100,7 +89,7 @@ const appRoutes: Routes = [
     MDBBootstrapModule.forRoot()
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [UserService, AuthGuard, DataService, User, HttpClientModule, FormControlService, FormFieldsService],
+  providers: [UserService, AuthGuard, User, HttpClientModule, FormControlService, FormFieldsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

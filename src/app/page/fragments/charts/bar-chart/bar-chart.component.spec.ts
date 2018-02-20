@@ -19,7 +19,31 @@ describe('BarChartComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  /**
+   * tests whether createChart() is working
+   */
+  describe('createChart(): ', () => {
+    it('working well', () => {
+      let dummyData = {
+        "dataCollection": [
+          [
+            {
+              "axis": "B. Basic Services",
+              "value": "49.1"
+            },
+            {
+              "axis": "D. Infrastructure of CHC",
+              "value": "65.4"
+            },
+            {
+              "axis": "E. Ideal Labour room gap analysis checklist",
+              "value": "56.9"
+            }
+          ]
+        ]
+      }
+      expect(component.createChart(dummyData.dataCollection)).toBe(true);
+
+    });
   });
 });

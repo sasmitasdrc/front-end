@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GoogleMapComponent } from './google-map.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { DashboardService } from '../../../../service/dashboard/dashboard.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('GoogleMapComponent', () => {
   let component: GoogleMapComponent;
@@ -8,7 +11,10 @@ describe('GoogleMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GoogleMapComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [ GoogleMapComponent ],
+      providers: [DashboardService],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

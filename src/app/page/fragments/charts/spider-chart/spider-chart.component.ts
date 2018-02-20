@@ -318,7 +318,7 @@ export class SpiderChartComponent implements OnInit, OnChanges {
       $("body").addClass("popoverOpened");
       // $('.popover.fade.top.in').css('top', parseFloat($('.popover.fade.top.in').css('top').slice(0, -2))+$(window).scrollTop());
     }
-  
+    return true;
   }
 
   updateChart(){

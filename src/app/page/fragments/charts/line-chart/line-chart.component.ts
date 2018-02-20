@@ -450,5 +450,6 @@ export class LineChartComponent implements OnInit, OnChanges {
 					};
 					d3.selectAll(".domain, .y.axis .tick line").style({"fill": "none", "stroke": "#000"});
 					d3.selectAll("circle.point").moveToFront();
+					return true;
   }
 }

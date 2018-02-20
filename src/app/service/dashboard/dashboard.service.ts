@@ -4,15 +4,18 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class DashboardService {
   spiderData: any;
+  barchartData: any;
   constructor(private httpClient: HttpClient) { }
   getSpiderChart(){
-    return  this.httpClient.get('assets/spiderData.json')
+    this.spiderData = this.httpClient.get('assets/spiderData.json');
+    return  this.spiderData;
   }
   getMapData(){
     return this.httpClient.get('assets/mapData.json')
   }
   getBarChartData(){
-    return this.httpClient.get('assets/spiderData.json')
+    this.barchartData = this.httpClient.get('assets/spiderData.json');
+    return this.barchartData;
   }
   getLineChartData(){
     return this.httpClient.get('assets/lineChartData.json');
