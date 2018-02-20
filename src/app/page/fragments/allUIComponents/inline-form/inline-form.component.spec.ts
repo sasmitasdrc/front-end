@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InlineFormComponent } from './inline-form.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('InlineFormComponent', () => {
   let component: InlineFormComponent;
@@ -8,7 +9,8 @@ describe('InlineFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InlineFormComponent ]
+      declarations: [ InlineFormComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

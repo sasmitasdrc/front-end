@@ -301,6 +301,7 @@ export class BarChartComponent implements OnInit {
       //         );})    // y position of the second end of the line
       // .on("mouseout", function() {
       // removePopovers();});				
+      return true;
   
   }
 

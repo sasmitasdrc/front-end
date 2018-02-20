@@ -19,7 +19,28 @@ describe('LineChartComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  /**
+   * tests whether createChart() is working
+   */
+  describe('createChart(): ', () => {
+    it('working well', () => {
+      let dummyData = [
+    
+        {
+        "timeNid": 27,
+        "indicatorOrder": 26,
+        "key": "CL",
+        "date": "Nov 2016",
+        "value": 0.1,
+        "andhraValue": null,
+        "telanganaValue": null,
+        "name": "India",
+        "source": "aggreagteArea",
+        "pdsas": ""
+        }
+      ]
+      expect(component.createChart(dummyData)).toBe(true);
+
+    });
   });
 });

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-root',

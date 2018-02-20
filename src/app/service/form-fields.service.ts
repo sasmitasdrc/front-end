@@ -5,11 +5,12 @@ import { FormModel } from '../interface/form.model'
 export class FormFieldsService {
 
   constructor() { }
+  questions:FormModel<any>[] ;
   // Todo: get from a remote source of question metadata
   // Todo: make asynchronous
   getQuestions() {
 
-    let questions:FormModel<any>[] = [  
+    this.questions = [  
       {  
          "value":"Solid",
          "key":"Solid",
@@ -110,6 +111,6 @@ export class FormFieldsService {
        "type":"textarea"
     }
    ]
-    return questions;
+    return this.questions;
   }
 }
