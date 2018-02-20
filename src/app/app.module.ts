@@ -91,7 +91,6 @@ const appRoutes: Routes = [
       { enableTracing: false } // <-- debugging purposes only
     ),
     BrowserModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AppRoutingModule,
     HttpClientModule,
     AgmSnazzyInfoWindowModule,
