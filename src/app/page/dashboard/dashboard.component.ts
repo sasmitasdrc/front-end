@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   mapData: any;
   lineChartData:any;
   barChartData: any;
+  progressCircleData: any;
   constructor(private dashboardService: DashboardService) { }
   ngOnInit() {
     this.dashboardService.getSpiderChart().subscribe(data=>{
@@ -24,6 +25,9 @@ export class DashboardComponent implements OnInit {
     })
     this.dashboardService.getLineChartData().subscribe(data=>{
       this.lineChartData = data;
+    })
+    this.dashboardService.getCircleProgressData().subscribe(data=>{
+      this.progressCircleData = data;
     })
   }
 

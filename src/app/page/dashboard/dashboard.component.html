@@ -1,20 +1,31 @@
-
+<div class="container-fluid">
 <div class="row" style="margin-top: 40px;margin-bottom: 40px;">
     <div class="col-md-12">
         <app-google-map></app-google-map>
+        <!-- <div appGoogleMap></div> -->
     </div>
 </div>
+
 <div class="row">
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
         <app-spider-chart *ngIf="spiderData" [data]="spiderData.dataCollection"></app-spider-chart>
-    </div>
+    </div> -->
 
     <div class="col-md-6">
-        <app-bar-chart *ngIf="barChartData" [data]="barChartData.dataCollection"></app-bar-chart>
+        <div appSpiderchart *ngIf="spiderData" [data]="spiderData.dataCollection" #spiderchart></div>
+    </div>
+
+    <div class="col-md-6 bar-chart">
+        <div appBarchart *ngIf="barChartData" [data]="barChartData.dataCollection" #barchart></div>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-8">
-        <app-line-chart *ngIf="lineChartData" [data]="lineChartData"></app-line-chart>
+<div class="row">       
+    <div class="col-md-6">
+        <div appChartDirective *ngIf="lineChartData" [data]="lineChartData" #linechartDirective></div>      
     </div>
+
+    <div class="col-md-6 circle-chart" id="circleChart">
+        <div appCircleProgress *ngIf="progressCircleData" [data]="progressCircleData" #circleProgress></div>
+    </div>
+</div>
 </div>

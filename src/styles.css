@@ -173,10 +173,7 @@ input[type="radio"] {
      pointer-events: none;
    }
    
-   [type="checkbox"] {
-     /* checkbox aspect */
-   }
-   
+    
    [type="checkbox"] + label {
      position: relative;
      padding-left: 35px;
@@ -813,5 +810,30 @@ input[type="radio"] {
    input[type=range]:focus::-ms-fill-upper {
      background: #ccc;
    }
+
+   /****** custom css by developer *****/
+   .bar-chart {
+    margin-top: 70px;
+   }
+   .d3-chart {
+    width: 100%;
+   }
    
+  .d3-chart .axis path,
+  .d3-chart .axis line {
+    stroke: #999;
+   }
    
+  .d3-chart .axis text {
+    fill: #999;
+   }
+  ngb-popover-window{
+    display: block !important;
+   }
+   agm-map {
+    height: 500px;
+   }
+   .circle-chart{
+     text-align: center;
+     padding-top: 80px;
+   }

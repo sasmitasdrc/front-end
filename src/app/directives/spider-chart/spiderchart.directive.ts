@@ -1,19 +1,15 @@
-import { Component, OnInit, Input, Output, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, ContentChild} from '@angular/core';
 import * as d3 from 'd3';
 import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
+import { forEach } from '@angular/router/src/utils/collection';
 declare var jquery:any;
 declare var $ :any;
 
-@Component({
-  selector: 'app-spider-chart',
-  templateUrl: './spider-chart.component.html',
-  styleUrls: ['./spider-chart.component.css'],
-  encapsulation: ViewEncapsulation.None
+@Directive({
+  selector: '[appSpiderchart]'
 })
-
-export class SpiderChartComponent implements OnInit, OnChanges {
-
-  @ViewChild('chart') private chartContainer: ElementRef;
+export class SpiderchartDirective implements OnInit {
+  @ContentChild('spiderchart') chartContainer : ElementRef;
   @Input() private data: Array<any>;
   private margin: any = { top: 20, bottom: 20, left: 20, right: 20};
   private chart: any;
@@ -24,29 +20,19 @@ export class SpiderChartComponent implements OnInit, OnChanges {
   private colors: any;
   private xAxis: any;
   private yAxis: any;
-  
-  constructor() { 
-   
-  }
 
-  ngOnInit() {
-    if (this.data) {
-      this.createChart(this.data);
+  constructor() { }
+ 
+  ngOnInit(){
+    if(this.data){
+      this.createSpiderChart(this.data);
     }
   }
 
-  ngOnChanges(changes) {
-    
-    if (this.data && changes.data.previousValue) {
-      this.createChart(this.data);
-    }
-  }
-
-  createChart(d) {
+  createSpiderChart(d){
     let element = this.chartContainer.nativeElement;
     d3.select(element).select("svg").remove();
   
-    
     var chartData = d;
     var cfg = {
       radius : 5,
@@ -324,4 +310,5 @@ export class SpiderChartComponent implements OnInit, OnChanges {
   updateChart(){
 
   }
+
 }

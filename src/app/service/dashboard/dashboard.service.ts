@@ -17,4 +17,7 @@ export class DashboardService {
   getLineChartData(){
     return this.httpClient.get('assets/lineChartData.json');
   }
+  getCircleProgressData(){
+    return this.httpClient.get('assets/circleProgressData.json');
+  }
 }
